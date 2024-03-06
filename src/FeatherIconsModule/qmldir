@@ -2,5 +2,4 @@
 
 module FeatherIcons
 
-singleton Feather 1.0 FeatherIconVault.qml
 FeatherIcon 1.0 FeatherIcon.qml
