@@ -9,7 +9,7 @@ Window {
     width: 640
     height: 560
     title: qsTr("Feather Icons PySide example")
-    Universal.theme: Universal.Dark
+    Universal.theme: Universal.System
     color: Universal.background
 
     property string featherIconName: "feather"
@@ -17,11 +17,6 @@ Window {
 
     function formatStrokeWidth(strokeWidth) {
         return strokeWidth.toFixed(1);
-    }
-
-    function getNewStrokeWidth(curWidth, delta) {
-        console.log("Current width: " + curWidth + ", delta: " + delta);
-        return Math.max(0.5, Math.min(3, curWidth + delta));
     }
 
     ColumnLayout {
@@ -40,19 +35,44 @@ Window {
             }
         }
 
-        FeatherIcon {
-            icon: featherIconName
-            iconSize: 72
-            strokeWidth: mainIconStrokeWidth
-            color: Universal.foreground
-            Layout.alignment: Qt.AlignHCenter | Qt.AlignVCenter
-            Layout.fillHeight: true
+        ColumnLayout {
+            Layout.alignment: Qt.AlignHCenter
+            spacing: 32
+
+            FeatherIcon {
+                icon: featherIconName
+                iconSize: 72
+                strokeWidth: mainIconStrokeWidth
+                color: Universal.accent
+                Layout.alignment: Qt.AlignHCenter
+            }
+            TextField {
+                id: input
+                placeholderText: "Enter icon name"
+                text: featherIconName
+                Layout.preferredWidth: 200
+                Layout.alignment: Qt.AlignHCenter
+                onTextChanged: {
+                    featherIconName = input.text;
+                }
+            }
+            Text {
+                text: qsTr("Find more icons on the ")
+                        .concat("<a href='https://feathericons.com/'>Feather Icons</a>")
+                        .concat(" website.")
+                color: Universal.foreground
+                linkColor: Universal.accent
+                Layout.alignment: Qt.AlignHCenter
+                onLinkActivated: Qt.openUrlExternally(link)
+                MouseArea {
+                    anchors.fill: parent
+                    acceptedButtons: Qt.NoButton 
+                    cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
+                }
+            }
         }
 
         RowLayout {
-            Layout.fillHeight: true
-            Layout.topMargin: 32
-            Layout.bottomMargin: 32
             Layout.alignment: Qt.AlignHCenter
             spacing: 32
             ColumnLayout {
@@ -75,23 +95,20 @@ Window {
                     icon.source: FeatherIconsVault.getSource("plus")
                     Layout.preferredWidth: 130
                     onClicked: {
-                        mainIconStrokeWidth = getNewStrokeWidth(mainIconStrokeWidth, 0.5);
+                        mainIconStrokeWidth += 0.5;
                     }
+                    enabled: mainIconStrokeWidth < 3
                 }
                 Button {
                     text: "Decrease"
                     icon.source: FeatherIconsVault.getSource("minus")
                     Layout.preferredWidth: 130
                     onClicked: {
-                        mainIconStrokeWidth = getNewStrokeWidth(mainIconStrokeWidth, -0.5);
+                        mainIconStrokeWidth -= 0.5;
                     }
+                    enabled: mainIconStrokeWidth > 0.5
                 }
             }
-        }
-
-        RowLayout {
-            Layout.alignment: Qt.AlignHCenter
-            spacing: 16
         }
     }
 }
