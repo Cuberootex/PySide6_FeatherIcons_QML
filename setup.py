@@ -6,7 +6,10 @@ setup(
     description="Adds Feather Icons usable in QML for PySide6",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    version="0.1.0",
+    project_urls={
+        "Source code": "https://pypi.org/project/PySide6-FeatherIcons-QML/"
+    },
+    version="0.1.1",
     packages=find_packages(),
     include_package_data=True,
     license="MIT",

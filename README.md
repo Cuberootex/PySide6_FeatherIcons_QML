@@ -8,7 +8,7 @@ A PySide6 library for integrating Feather icons into QML.
 
 In your Python project, if you are using a virtual environment, source it, then run
 ```
-pip install PySide6-FeatherIcons-QML==0.1.0
+pip install PySide6-FeatherIcons-QML
 ```
 
 Your app's `QQmlApplicationEngine` first needs to be registered before any icons can be used. This is done with the `FeatherIconsQML.register(e: QQmlApplicationEngine)` method.
