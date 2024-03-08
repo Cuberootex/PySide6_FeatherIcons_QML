@@ -31,7 +31,7 @@ Window {
             Text {
                 text: qsTr("Feather Icons")
                 color: Universal.foreground
-                font.pixelSize: 24
+                font.pixelSize: 28
             }
         }
 

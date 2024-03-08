@@ -6,10 +6,14 @@ from sys import exit
 
 app = QGuiApplication()
 engine = QQmlApplicationEngine()
+
 QtCore.qInstallMessageHandler(lambda mode, context, msg: print(f"[qml] {msg}"))
 FeatherIconsQML.register(engine)
+
 engine.quit.connect(app.quit)
 engine.load("view.qml")
+
 if not engine.rootObjects():
     exit(-1)
+
 exit(app.exec())
