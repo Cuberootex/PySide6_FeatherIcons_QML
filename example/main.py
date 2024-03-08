@@ -4,16 +4,17 @@ from PySide6 import QtCore
 import FeatherIconsQML
 from sys import exit
 
-app = QGuiApplication()
-engine = QQmlApplicationEngine()
+if __name__ == "__main__":
+    app = QGuiApplication()
+    engine = QQmlApplicationEngine()
 
-QtCore.qInstallMessageHandler(lambda mode, context, msg: print(f"[qml] {msg}"))
-FeatherIconsQML.register(engine)
+    QtCore.qInstallMessageHandler(lambda mode, context, msg: print(f"[qml] {msg}"))
+    FeatherIconsQML.register(engine)
 
-engine.quit.connect(app.quit)
-engine.load("view.qml")
+    engine.quit.connect(app.quit)
+    engine.load("view.qml")
 
-if not engine.rootObjects():
-    exit(-1)
+    if not engine.rootObjects():
+        exit(-1)
 
-exit(app.exec())
+    exit(app.exec())

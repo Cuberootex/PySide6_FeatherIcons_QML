@@ -2,12 +2,12 @@
 
 A PySide6 library for integrating Feather icons into QML.
 
-
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2FCuberootex%2FPySide6_FeatherIcons_QML&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23404040&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 
 ## Installation
 
 
-`QQmlApplicationEngine` first needs to be registered before any icons can be used. This is done with the `FeatherIconsQML.register(e: QQmlApplicationEngine)` method.
+Your app's `QQmlApplicationEngine` first needs to be registered before any icons can be used. This is done with the `FeatherIconsQML.register(e: QQmlApplicationEngine)` method.
 
 ```python
 # main.py
@@ -26,7 +26,7 @@ FeatherIconsQML.register(engine)
 
 The `FeatherIcons` module can now be imported inside QML files:
 
-```json
+```qml
 // view.qml
 import FeatherIcons
 ```
@@ -51,7 +51,7 @@ The `FeatherIcon` QML object is used to display icons.
 
 #### Example 
 
-```json
+```qml
 // view.qml
 import FeatherIcons
 
@@ -87,7 +87,7 @@ Returns the source URL of a Feather icon given its `featherIconName` and a `stro
 
 #### Example
 
-```json
+```qml
 // view.qml
 import QtQuick.Controls
 import FeatherIcons
