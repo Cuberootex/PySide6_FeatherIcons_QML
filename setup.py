@@ -7,9 +7,9 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     project_urls={
-        "Source code": "https://pypi.org/project/PySide6-FeatherIcons-QML/"
+        "Source code": "https://github.com/Cuberootex/PySide6_FeatherIcons_QML",
     },
-    version="0.1.1",
+    version="0.1.2",
     packages=find_packages(),
     include_package_data=True,
     license="MIT",
