@@ -6,6 +6,10 @@ A PySide6 library for integrating Feather icons into QML.
 
 ## Installation
 
+In your Python project, if you are using a virtual environment, source it, then run
+```
+pip install PySide6-FeatherIcons-QML==0.1.0
+```
 
 Your app's `QQmlApplicationEngine` first needs to be registered before any icons can be used. This is done with the `FeatherIconsQML.register(e: QQmlApplicationEngine)` method.
 
@@ -49,7 +53,7 @@ The `FeatherIcon` QML object is used to display icons.
 | strokeWidth | real   | false    | 2.0     | Accepted values are: 0.5, 1.0, 1.5, 2.0, 2.5, 3.0                                                  |
 | color       | color | false    | "black" |                                                                                                    |
 |shadowEnabled|bool|false|false|This and other shadow/blur-related properties are passed to a `MultiEffect` QML object (https://doc.qt.io/qt-6/qml-qtquick-effects-multieffect.html)|
-|shadowColor|color|false|`Qt.rgba(0, 0, 0, 0.6)`||
+|shadowColor|color|false|"black"||
 |shadowHorizontalOffset|real|false|2||
 |shadowVerticalOffset|real|false|2||
 |shadowBlur|real|false|0.6|Value ranges from 0.0 to 1.0|

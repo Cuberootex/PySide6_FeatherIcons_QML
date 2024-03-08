@@ -1,1 +1,1 @@
-recursive-include src/FeatherIconsModule **/*
+recursive-include FeatherIconsQML/FeatherIcons **/*
