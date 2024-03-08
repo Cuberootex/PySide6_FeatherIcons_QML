@@ -45,6 +45,9 @@ Window {
                 strokeWidth: mainIconStrokeWidth
                 color: Universal.accent
                 Layout.alignment: Qt.AlignHCenter
+                shadowEnabled: true
+                shadowColor: Universal.foreground
+                shadowOpacity: 0.4
             }
             TextField {
                 id: input

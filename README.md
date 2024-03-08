@@ -44,10 +44,24 @@ The `FeatherIcon` QML object is used to display icons.
 
 | Name        | Type   | Required | Default | Notes                                                                                              |
 | ----------- | ------ | -------- | ------- | -------------------------------------------------------------------------------------------------- |
-| icon        | string | true     |         | A valid Feather icon name. All possible Feather icons can be found here: https://feathericons.com/ |
+| icon        | string | **true**     |         | A valid Feather icon name. All possible Feather icons can be found here: https://feathericons.com/ |
 | iconSize    | real   | false    | 24      |                                                                                                    |
 | strokeWidth | real   | false    | 2.0     | Accepted values are: 0.5, 1.0, 1.5, 2.0, 2.5, 3.0                                                  |
-| color       | string | false    | "black" |                                                                                                    |
+| color       | color | false    | "black" |                                                                                                    |
+|shadowEnabled|bool|false|false|This and other shadow/blur-related properties are passed to a `MultiEffect` QML object (https://doc.qt.io/qt-6/qml-qtquick-effects-multieffect.html)|
+|shadowColor|color|false|`Qt.rgba(0, 0, 0, 0.6)`||
+|shadowHorizontalOffset|real|false|2||
+|shadowVerticalOffset|real|false|2||
+|shadowBlur|real|false|0.6|Value ranges from 0.0 to 1.0|
+|shadowOpacity|real|false|0.6|Value ranges from 0.0 to 1.0|
+|shadowScale|real|false|1.0||
+|blurEnabled|bool|false|false||
+|blur|real|false|0.0|Value ranges from 0.0 to 1.0|
+|blurMax|int|false|32|Affects both blur and shadow effects.|
+|blurMultiplier|real|false|1.0|Affects both blur and shadow effects.|
+
+
+Because a `FeatherIcon` is first and foremost a QML `Item` under the hood, it also supports the properties listed here: https://doc.qt.io/qt-6/qml-qtquick-item.html
 
 #### Example 
 
