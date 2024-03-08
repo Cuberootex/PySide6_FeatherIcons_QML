@@ -93,6 +93,7 @@ Window {
                 Button {
                     text: "Increase"
                     icon.source: FeatherIconsVault.getSource("plus")
+                    icon.color: Universal.accent
                     Layout.preferredWidth: 130
                     onClicked: {
                         mainIconStrokeWidth += 0.5;
